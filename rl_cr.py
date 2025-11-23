@@ -6,7 +6,7 @@ from stable_baselines3.common.evaluation import evaluate_policy
 from stable_baselines3.common.callbacks import EvalCallback, StopTrainingOnNoModelImprovement
 from stable_baselines3.common.monitor import Monitor  # ← ДОБАВЬТЕ ЭТО
 import matplotlib.pyplot as plt
-from rl_env_sta11 import TradingEnv
+from rl_env import TradingEnv
 # Загрузка данных
 data_path = "archive/M15/BTCUSDT_M15.csv"
 df = pd.read_csv(data_path)
