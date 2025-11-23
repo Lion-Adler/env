@@ -4,7 +4,7 @@ from stable_baselines3.common.vec_env import DummyVecEnv
 from stable_baselines3.common.monitor import Monitor
 from stable_baselines3.common.callbacks import EvalCallback
 import pandas as pd
-from rl_env_sta11 import TradingEnv
+from rl_env import TradingEnv
 
 # Быстрая загрузка данных
 data_path = "archive/M15/BTCUSDT_M15.csv"
