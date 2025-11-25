@@ -160,7 +160,7 @@ class TradingEnv(gym.Env):
                 reward = pnl - 2 * self.commission  # Закрытие SHORT + открытие LONG
             
             # Обновляем баланс (только здесь!)
-                self.balance *= (1 + reward)
+                self.balance += ( reward)
             
             # Открываем LONG
                 self.position = 'long'
@@ -172,7 +172,7 @@ class TradingEnv(gym.Env):
             # → Баланс не меняется (позиция только открылась)
             
                 reward = -self.commission
-                self.balance *= (1 + reward)
+                self.balance += (reward)
             
                 self.position = 'long'
                 self.entry_price = current_price
@@ -200,7 +200,7 @@ class TradingEnv(gym.Env):
                 reward = pnl - 2 * self.commission  # Закрытие LONG + открытие SHORT
             
             # Обновляем баланс (только здесь!)
-                self.balance *= (1 + reward)
+                self.balance += (reward)
             
             # Открываем SHORT
                 self.position = 'short'
@@ -212,7 +212,7 @@ class TradingEnv(gym.Env):
             # → Баланс не меняется (позиция только открылась)
             
                 reward = -self.commission
-                self.balance *= (1 + reward)
+                self.balance += ( reward)
             
                 self.position = 'short'
                 self.entry_price = current_price
@@ -234,7 +234,7 @@ class TradingEnv(gym.Env):
                 reward = pnl - self.commission  # Только закрытие LONG
             
             # Обновляем баланс
-                self.balance *= (1 + reward)
+                self.balance += (reward)
             
             # Закрываем позицию
                 self.position = None
@@ -252,7 +252,7 @@ class TradingEnv(gym.Env):
                 reward = pnl - self.commission  # Только закрытие SHORT
             
             # Обновляем баланс
-                self.balance *= (1 + reward)
+                self.balance += (reward)
             
             # Закрываем позицию
                 self.position = None
